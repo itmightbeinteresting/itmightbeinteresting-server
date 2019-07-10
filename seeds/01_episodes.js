@@ -5,7 +5,7 @@ exports.seed = function (knex, Promise) {
         id: 1,
         added: `2019-07-01`,
         title: `Ep. 01: The State of Religion in America`,
-        slug: `the-state-of-religion-in-america`,
+        slug: `01-the-state-of-religion-in-america`,
         website_url: `https://itmightbeinteresting.com/01-the-state-of-religion-in-america`,
         download_url: `https://www.podbean.com/site/EpisodeDownload/PBB626E9UKDAR`,
         embed_url: `https://www.podbean.com/media/player/ukdar-b626e9&amp;?from=usersite&amp;vjs=1&amp;skin=2&amp;fonts=Helvetica&amp;auto=0&amp;download=1`,
