@@ -6,13 +6,13 @@ const app = express();
 const bcrypt = require('bcrypt');
 
 const episodes = require('./routes/episodes');
-const users = require('./routes/users');
+// const users = require('./routes/users');
 
 app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/api/episodes', episodes);
-app.use('/api/users', users);
+// app.use('/api/users', users);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
@@ -28,24 +28,24 @@ app.use((err, req, res, next) => {
   });
 });
 
-bcrypt.hash('myPassword', 10, function(err, hash) {
-  if (err) {
-    console.log(err);
-    return err;
-  } else {
-    console.log(hash);
-    return hash;
-  }
-});
+// bcrypt.hash('myPassword', 10, function(err, hash) {
+//   if (err) {
+//     console.log(err);
+//     return err;
+//   } else {
+//     console.log(hash);
+//     return hash;
+//   }
+// });
 
-bcrypt.compare('somePassword', hash, function(err, res) {
-  if (res) {
-    console.log(res);
-    return res;
-  } else {
-    console.log(err);
-    return err;
-  }
-});
+// bcrypt.compare('somePassword', hash, function(err, res) {
+//   if (res) {
+//     console.log(res);
+//     return res;
+//   } else {
+//     console.log(err);
+//     return err;
+//   }
+// });
 
 module.exports = app;
