@@ -4,10 +4,10 @@
   "description": "Database for podcast It Might Be Interesting",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "knex:local": "npx knex migrate:rollback && npx knex migrate:latest && npx knex seed:run",
     "knex:heroku": "npx heroku run knex migrate:rollback && npx heroku run knex migrate:latest && heroku run knex seed:run",
-    "complete": "git push && git push heroku master && npx knex migrate:rollback && npx knex migrate:latest && npx knex seed:run && npx heroku run knex migrate:rollback && npx heroku run knex migrate:latest && heroku run knex seed:run",
+    "complete": "git push heroku master && npx knex migrate:rollback && npx knex migrate:latest && npx knex seed:run && npx heroku run knex migrate:rollback && npx heroku run knex migrate:latest && heroku run knex seed:run",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Josh Levy",
