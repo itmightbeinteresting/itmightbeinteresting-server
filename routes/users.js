@@ -45,24 +45,24 @@ router.put('/:id', (request, response, next) => {
   }).catch(next);
 });
 
-bcrypt.hash('myPassword', 10, function(err, hash) {
-  if (err) {
-    console.log(err);
-    return err;
-  } else {
-    console.log(hash);
-    return hash;
-  }
-});
+// bcrypt.hash('myPassword', 10, function(err, hash) {
+//   if (err) {
+//     console.log(err);
+//     return err;
+//   } else {
+//     console.log(hash);
+//     return hash;
+//   }
+// });
 
-bcrypt.compare('somePassword', hash, function(err, res) {
-  if (err) {
-    console.log(err);
-    return err;
-  } else {
-    console.log(res);
-    return res;
-  } 
-});
+// bcrypt.compare('somePassword', hash, function(err, res) {
+//   if (err) {
+//     console.log(err);
+//     return err;
+//   } else {
+//     console.log(res);
+//     return res;
+//   } 
+// });
 
 module.exports = router;
