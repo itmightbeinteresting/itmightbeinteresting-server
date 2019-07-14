@@ -3,16 +3,16 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 const app = express();
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 const episodes = require('./routes/episodes');
-// const users = require('./routes/users');
+const users = require('./routes/users');
 
 app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/api/episodes', episodes);
-// app.use('/api/users', users);
+app.use('/api/users', users);
 
 app.use((req, res, next) => {
   const err = new Error('Not Found');
