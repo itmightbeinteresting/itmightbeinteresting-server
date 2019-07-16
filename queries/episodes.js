@@ -4,24 +4,24 @@ module.exports = {
   list() {
     return database('episodes').select();
   },
-  read(id) {
-    return database('episodes').select().where('id', id).first();
+  read(slug) {
+    return database('episodes').select().where('slug', slug).first();
   },
-  create(id) {
+  create(slug) {
     return database('episodes')
       .insert()
-      .where('id', id)
+      .where('slug', slug)
       .returning('*')
       .then(record => record[0]);
   },
-  update(id) {
+  update(slug) {
     return database('episodes')
       .update()
-      .where('id', id)
+      .where('slug', slug)
       .returning('*')
       .then(record => record[0]);
   },
-  delete(id) {
-    return database('episodes').delete().where('id', id);
+  delete(slug) {
+    return database('episodes').delete().where('slug', slug);
   }
 };

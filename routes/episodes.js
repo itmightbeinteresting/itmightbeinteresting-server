@@ -11,8 +11,8 @@ router.get('/', (request, response, next) => {
   }).catch(next);
 });
 
-router.get('/:id', (request, response, next) => {
-  queries.read(request.params.id).then(episode => {
+router.get('/:slug', (request, response, next) => {
+  queries.read(request.params.slug).then(episode => {
     episode
       ?
       response.json({
