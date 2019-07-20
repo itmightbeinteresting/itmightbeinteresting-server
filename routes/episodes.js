@@ -12,21 +12,34 @@ router.get('/', (request, response, next) => {
 });
 
 router.get('/:slug', (request, response, next) => {
+  console.log('Server Response')
+  console.log(response)
   queries.read(request.params.slug).then(episode => {
     episode
       ?
       response.json({
         episode
       }) :
-      console.log('Request')
-      console.log(request)
-      console.log('Params')
-      console.log(request.params)
-      console.log('Response')
-      console.log(response)
       response.sendStatus(404)
   }).catch(next);
 });
+
+// router.get('/:slug', (request, response, next) => {
+//   queries.read(request.params.slug).then(episode => {
+//     episode
+//       ?
+//       response.json({
+//         episode
+//       }) :
+//       console.log('Request')
+//       console.log(request)
+//       console.log('Params')
+//       console.log(request.params)
+//       console.log('Response')
+//       console.log(response)
+//       response.sendStatus(404)
+//   }).catch(next);
+// });
 
 router.post('/', (request, response, next) => {
   queries.create(request.body).then(episode => {
