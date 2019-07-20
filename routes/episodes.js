@@ -11,17 +11,15 @@ router.get('/', (request, response, next) => {
   }).catch(next);
 });
 
-router.get('/:slug', (request, response, next) => {
-  console.log('Server Response')
-  console.log(response)
+router.get('/:slug', (request, response) => {
   queries.read(request.params.slug).then(episode => {
-    episode
-      ?
-      response.json({
-        episode
-      }) :
-      response.sendStatus(404)
-  }).catch(next);
+    if (!episode) {
+      console.log('Oh no!')
+      return response
+    } else {
+      return episode
+    }
+  });
 });
 
 // router.get('/:slug', (request, response, next) => {
