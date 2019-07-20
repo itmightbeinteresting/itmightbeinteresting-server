@@ -13,11 +13,13 @@ router.get('/', (request, response, next) => {
 
 router.get('/:slug', (request, response) => {
   queries.read(request.params.slug).then(episode => {
-    if (!episode) {
+    if (response.ok !== true || !episode) {
       console.log('Oh no!')
-      return response
+      throw new Error(response)
     } else {
-      return episode
+      response.json({
+        episode
+      })
     }
   });
 });
