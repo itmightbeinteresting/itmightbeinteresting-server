@@ -11,35 +11,29 @@ router.get('/', (request, response, next) => {
   }).catch(next);
 });
 
-router.get('/:slug', (request, response) => {
-  queries.read(request.params.slug).then(episode => {
-    if (response.ok !== true || !episode) {
-      console.log('Oh no!')
-      throw new Error(response)
-    } else {
-      response.json({
-        episode
-      })
-    }
-  });
-});
-
 // router.get('/:slug', (request, response, next) => {
 //   queries.read(request.params.slug).then(episode => {
-//     episode
-//       ?
+//     if (response.ok !== true || !episode) {
+//       console.log('Oh no!')
+//       throw new Error(response)
+//     } else {
 //       response.json({
 //         episode
-//       }) :
-//       console.log('Request')
-//       console.log(request)
-//       console.log('Params')
-//       console.log(request.params)
-//       console.log('Response')
-//       console.log(response)
-//       response.sendStatus(404)
+//       })
+//     }
 //   }).catch(next);
 // });
+
+router.get('/:slug', (request, response, next) => {
+  queries.read(request.params.slug).then(episode => {
+    episode
+      ?
+      response.json({
+        episode
+      }) :
+      response.sendStatus(404)
+  }).catch(next);
+});
 
 router.post('/', (request, response, next) => {
   queries.create(request.body).then(episode => {
