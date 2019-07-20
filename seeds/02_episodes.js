@@ -25,6 +25,18 @@ exports.seed = function (knex, Promise) {
           itunes_url: `https://podcasts.apple.com/us/podcast/ep-02-the-decline-of-the-american-economy/id1471161206?i=1000444508279`,
           youtube_url: `https://www.youtube.com/watch?v=M94kN9eIbpM`,
           spotify_url: `https://open.spotify.com/episode/5cq7cg2blWVep4J8AkI3iQ?si=e9CUqPh9RVaahaRyw0qpcA`
+        },
+        {
+          id: 3,
+          added: `2019-07-22`,
+          title: `Ep. 03: The Media Diet - Part 1`,
+          slug: `03-the-media-diet-part-1`,
+          website_url: `https://itmightbeinteresting.com/03-the-media-diet-part-1`,
+          download_url: ``,
+          embed_url: ``,
+          itunes_url: ``,
+          youtube_url: ``,
+          spotify_url: ``
         }
       ]);
     })
