@@ -18,6 +18,12 @@ router.get('/:slug', (request, response, next) => {
       response.json({
         episode
       }) :
+      console.log('Request')
+      console.log(request)
+      console.log('Params')
+      console.log(request.params)
+      console.log('Response')
+      console.log(response)
       response.sendStatus(404)
   }).catch(next);
 });
