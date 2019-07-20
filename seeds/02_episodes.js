@@ -32,11 +32,11 @@ exports.seed = function (knex, Promise) {
           title: `Ep. 03: The Media Diet - Part 1`,
           slug: `03-the-media-diet-part-1`,
           website_url: `https://itmightbeinteresting.com/03-the-media-diet-part-1`,
-          download_url: ``,
-          embed_url: ``,
-          itunes_url: ``,
-          youtube_url: ``,
-          spotify_url: ``
+          download_url: null,
+          embed_url: null,
+          itunes_url: null,
+          youtube_url: null,
+          spotify_url: null
         }
       ]);
     })
