@@ -4,7 +4,7 @@ exports.seed = function (knex, Promise) {
       return knex('episodes').insert([
         {
           id: 1,
-          added: `2019-07-01`,
+          added: `July 01, 2019`,
           title: `Ep. 01: The State of Religion in America`,
           slug: `01-the-state-of-religion-in-america`,
           website_url: `https://itmightbeinteresting.com/01-the-state-of-religion-in-america`,
@@ -16,7 +16,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 2,
-          added: `2019-07-15`,
+          added: `July 15, 2019`,
           title: `Ep. 02: The Decline of the American Economy`,
           slug: `02-the-decline-of-the-american-economy`,
           website_url: `https://itmightbeinteresting.com/02-the-decline-of-the-american-economy`,
@@ -28,7 +28,7 @@ exports.seed = function (knex, Promise) {
         },
         {
           id: 3,
-          added: `2019-07-22`,
+          added: `July 22, 2019`,
           title: `Ep. 03: The Media Diet - Part 1`,
           slug: `03-the-media-diet-part-1`,
           website_url: `https://itmightbeinteresting.com/03-the-media-diet-part-1`,
@@ -37,6 +37,18 @@ exports.seed = function (knex, Promise) {
           itunes_url: `https://podcasts.apple.com/us/podcast/ep-03-the-media-diet-part-1/id1471161206?i=1000445030884`,
           youtube_url: `https://www.youtube.com/watch?v=VC-hXt_MJz0`,
           spotify_url: `https://open.spotify.com/episode/65HojaK5E1skSjsBpy5RbM?si=cyI-o6LERN2fFJxobTCKbg`
+        },
+        {
+          id: 4,
+          added: `July 29, 2019`,
+          title: `Ep. 04: The Media Diet - Part 2`,
+          slug: `04-the-media-diet-part-2`,
+          website_url: `https://itmightbeinteresting.com/04-the-media-diet-part-2`,
+          download_url: null,
+          embed_url: null,
+          itunes_url: null,
+          youtube_url: null,
+          spotify_url: null
         }
       ]);
     })
