@@ -32,11 +32,11 @@ exports.seed = function (knex, Promise) {
           title: `Ep. 03: The Media Diet - Part 1`,
           slug: `03-the-media-diet-part-1`,
           website_url: `https://itmightbeinteresting.com/03-the-media-diet-part-1`,
-          download_url: null,
-          embed_url: null,
-          itunes_url: null,
-          youtube_url: null,
-          spotify_url: null
+          download_url: `https://mcdn.podbean.com/mf/download/ifb7cr/It_Might_Be_Interesting_Ep_03.mp3`,
+          embed_url: `https://www.podbean.com/media/player/audio/postId/12058157?url=https%3A%2F%2Fwww.podbean.com%2Few%2Fpb-i9f6i-b7fe2d&version=1`,
+          itunes_url: `https://podcasts.apple.com/us/podcast/ep-03-the-media-diet-part-1/id1471161206?i=1000445030884`,
+          youtube_url: `https://www.youtube.com/watch?v=VC-hXt_MJz0`,
+          spotify_url: `https://open.spotify.com/episode/65HojaK5E1skSjsBpy5RbM?si=cyI-o6LERN2fFJxobTCKbg`
         }
       ]);
     })
