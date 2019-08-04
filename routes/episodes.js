@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 router.get('/', getAll)
-router.get('/:id', getOne)
+router.get('/:slug', getOne)
 router.post('/', create)
 router.put('/:id', update)
 router.delete('/:id', remove)
