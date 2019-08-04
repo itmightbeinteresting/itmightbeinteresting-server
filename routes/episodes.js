@@ -11,19 +11,6 @@ router.get('/', (request, response, next) => {
   }).catch(next);
 });
 
-// router.get('/:slug', (request, response, next) => {
-//   queries.read(request.params.slug).then(episode => {
-//     if (response.ok !== true || !episode) {
-//       console.log('Oh no!')
-//       throw new Error(response)
-//     } else {
-//       response.json({
-//         episode
-//       })
-//     }
-//   }).catch(next);
-// });
-
 router.get('/:slug', (request, response, next) => {
   queries.read(request.params.slug).then(episode => {
     episode

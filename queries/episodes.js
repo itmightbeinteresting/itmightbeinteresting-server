@@ -7,21 +7,21 @@ module.exports = {
   read(slug) {
     return database('episodes').select().where('slug', slug).first();
   },
-  create(slug) {
+  create(id) {
     return database('episodes')
       .insert()
-      .where('slug', slug)
+      .where('id', id)
       .returning('*')
       .then(record => record[0]);
   },
-  update(slug) {
+  update(id) {
     return database('episodes')
       .update()
-      .where('slug', slug)
+      .where('id', id)
       .returning('*')
       .then(record => record[0]);
   },
-  delete(slug) {
-    return database('episodes').delete().where('slug', slug);
+  delete(id) {
+    return database('episodes').delete().where('id', id);
   }
 };
