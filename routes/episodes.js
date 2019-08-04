@@ -24,12 +24,10 @@ router.get('/:slug', (request, response, next) => {
 
 router.post('/', (request, response, next) => {
   queries.create(request.body).then(episode => {
-    response.log(episode)
     console.log(episode)
     response.status(201).json({
       episode: episode
     });
-    response.log(episode)
     console.log(episode)
   }).catch(next);
 });
