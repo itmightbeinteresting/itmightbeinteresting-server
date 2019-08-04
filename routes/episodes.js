@@ -29,7 +29,7 @@ function getOne(req, res, next) {
     .select('*')
     .limit(1)
     .where({
-      id: req.params.id
+      slug: req.params.slug
     })
     .then(([episode]) => {
       if (!episode) return res.status(404).send({
