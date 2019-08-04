@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 const app = express();
-const bcrypt = require('bcryptjs');
 
 const episodes = require('./routes/episodes');
 const users = require('./routes/users');
@@ -27,25 +26,5 @@ app.use((err, req, res, next) => {
     error: req.app.get('env') === 'development' ? err.stack : {}
   });
 });
-
-// bcrypt.hash('myPassword', 10, function(err, hash) {
-//   if (err) {
-//     console.log(err);
-//     return err;
-//   } else {
-//     console.log(hash);
-//     return hash;
-//   }
-// });
-
-// bcrypt.compare('somePassword', hash, function(err, res) {
-//   if (res) {
-//     console.log(res);
-//     return res;
-//   } else {
-//     console.log(err);
-//     return err;
-//   }
-// });
 
 module.exports = app;
