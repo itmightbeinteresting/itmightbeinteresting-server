@@ -2,6 +2,7 @@ exports.up = function (knex, Promise) {
   return knex.schema.createTable('episodes', episodes => {
     episodes.increments('id');
     episodes.datetime('added');
+    episodes.boolean('released');
     episodes.string('title');
     episodes.string('slug');
     episodes.string('website_url');
