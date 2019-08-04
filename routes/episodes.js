@@ -1,49 +1,79 @@
 const express = require('express');
-const router = express.Router();
+const knex = require('../database-connection');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const app = express();
 
-const queries = require('../queries/episodes');
+const router = module.exports = require('express').Router();
 
-router.get('/', (request, response, next) => {
-  queries.list('episodes').then(episodes => {
-    response.json({
-      episodes
-    });
-  }).catch(next);
-});
+app.use(bodyParser.json());
+app.use(cors());
 
-router.get('/:slug', (request, response, next) => {
-  queries.read(request.params.slug).then(episode => {
-    episode
-      ?
-      response.json({
-        episode
+router.get('/', getAll)
+router.get('/:id', getOne)
+router.post('/', create)
+router.put('/:id', update)
+router.delete('/:id', remove)
+
+function getAll(req, res, next) {
+  knex('episodes')
+    .select('*')
+    .then(episodes => res.status(200).send({
+      episodes: episodes
+    }))
+    .catch(next)
+}
+
+function getOne(req, res, next) {
+  knex('episodes')
+    .select('*')
+    .limit(1)
+    .where({
+      id: req.params.id
+    })
+    .then(([episode]) => {
+      if (!episode) return res.status(404).send({
+        message: 'Item not found.'
+      })
+      res.status(200).send({
+        episode: episode
+      })
+    })
+    .catch(next)
+}
+
+function create(req, res, next) {
+  knex('episodes')
+    .insert(req.body)
+    .then(() => res.status(201).json({
+      episode: req.body
+    }))
+    .catch(next)
+}
+
+function update(req, res, next) {
+  knex('episodes')
+    .where({
+      id: req.params.id
+    })
+    .update(req.body)
+    .then(count => count >= 1 ?
+      res.status(200).json({
+        episode: req.body
       }) :
-      response.sendStatus(404)
-  }).catch(next);
-});
+      res.status(410).json())
+    .catch(next)
+}
 
-router.post('/', (request, response, next) => {
-  queries.create(request.body).then(episode => {
-    console.log(episode)
-    response.status(201).json({
-      episode: episode
-    });
-    console.log(episode)
-  }).catch(next);
-});
-
-router.delete('/:id', (request, response, next) => {
-  queries.delete(request.params.id).then(() => {
-    response.sendStatus(204);
-  }).catch(next);
-});
-
-router.put('/:id', (request, response, next) => {
-  queries.update(request.params.id, request.body).then(episode => {
-    response.json({
-      episode: episode[0]
-    });
-  }).catch(next);
-});
-
-module.exports = router;
+function remove(req, res, next) {
+  knex('episodes').where({
+      id: req.params.id
+    })
+    .delete()
+    .then(count => count >= 1 ?
+      res.status(204).json() :
+      res.status(404).json({
+        message: 'Unable to delete episode!'
+      }))
+    .catch(next)
+}
