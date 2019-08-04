@@ -5,7 +5,7 @@ exports.seed = function (knex, Promise) {
         {
           id: 1,
           added: `2019-07-01`,
-          released: true,
+          available: true,
           title: `Ep. 01: The State of Religion in America`,
           slug: `01-the-state-of-religion-in-america`,
           website_url: `https://itmightbeinteresting.com/01-the-state-of-religion-in-america`,
@@ -17,7 +17,7 @@ exports.seed = function (knex, Promise) {
         {
           id: 2,
           added: `2019-07-15`,
-          released: true,
+          available: true,
           title: `Ep. 02: The Decline of the American Economy`,
           slug: `02-the-decline-of-the-american-economy`,
           website_url: `https://itmightbeinteresting.com/02-the-decline-of-the-american-economy`,
@@ -29,7 +29,7 @@ exports.seed = function (knex, Promise) {
         {
           id: 3,
           added: `2019-07-22`,
-          released: true,
+          available: true,
           title: `Ep. 03: The Media Diet - Part 1`,
           slug: `03-the-media-diet-part-1`,
           website_url: `https://itmightbeinteresting.com/03-the-media-diet-part-1`,
@@ -41,7 +41,7 @@ exports.seed = function (knex, Promise) {
         {
           id: 4,
           added: `2019-07-29`,
-          released: true,
+          available: true,
           title: `Ep. 04: The Media Diet - Part 2`,
           slug: `04-the-media-diet-part-2`,
           website_url: `https://itmightbeinteresting.com/04-the-media-diet-part-2`,
