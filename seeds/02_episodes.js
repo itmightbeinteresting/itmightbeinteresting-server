@@ -59,8 +59,20 @@ exports.seed = function (knex, Promise) {
           website_url: `https://itmightbeinteresting.com/05-the-media-diet-part-3`,
           embed_url: `https://www.podbean.com/media/player/nrat5-b81a53?from=yiiadmin&download=1&version=1&vjs=1&skin=1&auto=0&share=1&fonts=Helvetica&download=1&rtl=0&pbad=1`,
           itunes_url: `https://podcasts.apple.com/us/podcast/ep-05-the-media-diet-part-3-finale/id1471161206?i=1000446164782`,
-          youtube_url: `https://www.youtube.com/watch?v=_iAB--scnFQ`,
+          youtube_url: `https://www.youtube.com/watch?v=F5bT2GLJCpw`,
           spotify_url: `https://open.spotify.com/episode/6My2IqkrkkuemqN6bSOFF4?si=oMwpAfsCSqCsqwHFKDX7XQ`
+        },
+        {
+          id: 6,
+          added: `2019-08-12`,
+          available: false,
+          title: `Ep. 06: Midwestern America`,
+          slug: `06-midwestern-america`,
+          website_url: `https://itmightbeinteresting.com/06-midwestern-america`,
+          embed_url: null,
+          itunes_url: null,
+          youtube_url: `https://www.youtube.com/watch?v=QJgFSuXgXSA`,
+          spotify_url: null
         }
       ]);
     })
