@@ -49,6 +49,18 @@ exports.seed = function (knex, Promise) {
           itunes_url: `https://podcasts.apple.com/us/podcast/ep-04-the-media-diet-part-2/id1471161206?i=1000445553166`,
           youtube_url: `https://www.youtube.com/watch?v=_iAB--scnFQ`,
           spotify_url: `https://open.spotify.com/episode/03E7rIo3NUtsy73dt9oTiQ?si=_3uYBEdRTvGX9QbbK43TAw`
+        },
+        {
+          id: 5,
+          added: `2019-08-05`,
+          available: true,
+          title: `Ep. 05: The Media Diet - Part 3`,
+          slug: `05-the-media-diet-part-3`,
+          website_url: `https://itmightbeinteresting.com/05-the-media-diet-part-3`,
+          embed_url: `https://www.podbean.com/media/player/nrat5-b81a53?from=yiiadmin&download=1&version=1&vjs=1&skin=1&auto=0&share=1&fonts=Helvetica&download=1&rtl=0&pbad=1`,
+          itunes_url: `https://podcasts.apple.com/us/podcast/ep-05-the-media-diet-part-3-finale/id1471161206?i=1000446164782`,
+          youtube_url: `https://www.youtube.com/watch?v=_iAB--scnFQ`,
+          spotify_url: `https://open.spotify.com/episode/6My2IqkrkkuemqN6bSOFF4?si=oMwpAfsCSqCsqwHFKDX7XQ`
         }
       ]);
     })
