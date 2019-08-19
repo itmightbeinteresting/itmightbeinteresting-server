@@ -76,5 +76,5 @@ exports.seed = function (knex, Promise) {
         }
       ]);
     })
-    .then(() => knex.raw(`ALTER SEQUENCE episodes_id_seq RESTART WITH 3;`));
+    .then(() => knex.raw(`ALTER SEQUENCE episodes_id_seq RESTART WITH 7;`));
 };

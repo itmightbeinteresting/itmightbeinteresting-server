@@ -66,7 +66,8 @@ function update(req, res, next) {
 }
 
 function remove(req, res, next) {
-  knex('episodes').where({
+  knex('episodes')
+    .where({
       id: req.params.id
     })
     .delete()
